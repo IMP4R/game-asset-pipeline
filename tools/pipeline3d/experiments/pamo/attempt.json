@@ -1,0 +1,16 @@
+{
+  "method": "PaMO official 0.0.2",
+  "input": "/Users/user0/godot-hybrid-casual/tools/pipeline3d/runs/2026-09-02-tripo-bucket-v1/tripo_geometry_clean.glb",
+  "target_triangles": 500,
+  "platform": "macOS arm64 / Apple GPU",
+  "attempts": [
+    "cloned official SarahWeiii/pamo repository",
+    "inspected official Docker invocation with --gpus all",
+    "attempted native pip build of simp_cuda",
+    "attempted Docker probe; Docker daemon was unavailable"
+  ],
+  "hard_blocker": "simp_cuda/src/cusimp.h includes cuda_runtime.h and pybind.cpp rejects non-CUDA tensors; native build failed: fatal error: cuda_runtime.h file not found",
+  "official_hardware": "NVIDIA CUDA GPU",
+  "status": "incompatible with current Apple Silicon host; no output mesh",
+  "output": null
+}

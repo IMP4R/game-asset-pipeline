@@ -1,0 +1,1 @@
+Repair this extracted orange bucket. Preserve its exact viewpoint, silhouette proportions, orange material, rim and interior cavity. Smooth jagged extraction edges and remove stray background. Do not invent new parts. Output only the repaired object on a plain white background, with comfortable margins. No labels, no other objects. This is restoration, not a new design.

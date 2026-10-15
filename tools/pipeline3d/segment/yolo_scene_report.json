@@ -1,0 +1,20 @@
+{
+  "detections": [
+    {
+      "id": 0,
+      "class": "coin",
+      "confidence": 0.15,
+      "bbox": [
+        687.2791748046875,
+        1225.685302734375,
+        776.1611328125,
+        1310.0537109375
+      ]
+    }
+  ],
+  "elapsed_seconds": 98.43,
+  "peak_rss_bytes": 777764864,
+  "device": "cpu",
+  "threads": 2,
+  "imgsz": 640
+}

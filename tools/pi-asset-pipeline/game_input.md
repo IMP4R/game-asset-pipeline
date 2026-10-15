@@ -1,0 +1,4 @@
+# Game description
+Casual mobile color puzzle. Colored containers move through a conveyor system and participate in filling a pixel-art picture. The player chooses which containers to release; limited conveyor capacity and blocked/locked containers affect release order. The screenshot is the visual authority for actual object types, states, viewpoints, interface and layout. Rules not visible in the screenshot should be reported as supplied description or uncertain inference, not verified animation.
+
+Task: reconstruct the screenshot using newly generated separate assets and generated environment, preserving the game's original appearance and spatial layout rather than redesigning it. Analyze the supplied screenshot yourself. Produce asset map, generation references, complete standalone assets, reconstructed screenshot and original-left A/B with an honest quality report.

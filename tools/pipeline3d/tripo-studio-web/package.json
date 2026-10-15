@@ -1,0 +1,21 @@
+{
+  "name": "tripo-studio-web-automation",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "login": "node tripo-studio.mjs login",
+    "inspect": "node tripo-studio.mjs inspect",
+    "workspace": "node tripo-studio.mjs workspace",
+    "calibrate": "node tripo-studio.mjs calibrate",
+    "probe-inputs": "node tripo-studio.mjs probe-inputs",
+    "probe-multiview": "node tripo-studio.mjs probe-multiview",
+    "stage": "node tripo-studio.mjs stage",
+    "generate": "node tripo-studio.mjs generate",
+    "latest": "node tripo-studio.mjs latest",
+    "inspect-result": "node tripo-studio.mjs inspect-result",
+    "download": "node tripo-studio.mjs download"
+  },
+  "dependencies": {
+    "playwright-core": "^1.62.1"
+  }
+}

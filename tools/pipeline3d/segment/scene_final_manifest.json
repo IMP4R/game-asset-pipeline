@@ -1,0 +1,354 @@
+[
+  {
+    "id": 0,
+    "name": "settings",
+    "bbox": [
+      26,
+      16,
+      100,
+      91
+    ],
+    "method": "Apple Vision guided mask"
+  },
+  {
+    "id": 1,
+    "name": "restart",
+    "bbox": [
+      111,
+      16,
+      186,
+      95
+    ],
+    "method": "Apple Vision guided mask"
+  },
+  {
+    "id": 2,
+    "name": "lives",
+    "bbox": [
+      660,
+      17,
+      736,
+      85
+    ],
+    "method": "Apple Vision guided mask"
+  },
+  {
+    "id": 3,
+    "name": "currency",
+    "bbox": [
+      856,
+      16,
+      931,
+      95
+    ],
+    "method": "Apple Vision guided mask"
+  },
+  {
+    "id": 4,
+    "name": "picture_board",
+    "bbox": [
+      142,
+      92,
+      901,
+      790
+    ],
+    "method": "VLM boundary"
+  },
+  {
+    "id": 5,
+    "name": "conveyor",
+    "bbox": [
+      1,
+      790,
+      1051,
+      1025
+    ],
+    "method": "Apple Vision guided mask"
+  },
+  {
+    "id": 6,
+    "name": "capacity_panel",
+    "bbox": [
+      375,
+      970,
+      681,
+      1113
+    ],
+    "method": "Apple Vision guided mask"
+  },
+  {
+    "id": 7,
+    "name": "bucket_cream_inverted_01",
+    "bbox": [
+      176,
+      1225,
+      268,
+      1322
+    ],
+    "method": "Apple Vision guided mask"
+  },
+  {
+    "id": 8,
+    "name": "bucket_orange_open_01",
+    "bbox": [
+      272,
+      1211,
+      377,
+      1322
+    ],
+    "method": "Apple Vision guided mask"
+  },
+  {
+    "id": 9,
+    "name": "bucket_cream_open_01",
+    "bbox": [
+      375,
+      1210,
+      481,
+      1320
+    ],
+    "method": "Apple Vision guided mask"
+  },
+  {
+    "id": 10,
+    "name": "bucket_orange_open_02",
+    "bbox": [
+      476,
+      1210,
+      581,
+      1320
+    ],
+    "method": "Apple Vision guided mask"
+  },
+  {
+    "id": 11,
+    "name": "bucket_blue_inverted_01",
+    "bbox": [
+      584,
+      1225,
+      677,
+      1327
+    ],
+    "method": "Apple Vision guided mask"
+  },
+  {
+    "id": 12,
+    "name": "bucket_cream_inverted_02",
+    "bbox": [
+      686,
+      1225,
+      779,
+      1322
+    ],
+    "method": "Apple Vision guided mask"
+  },
+  {
+    "id": 13,
+    "name": "bucket_green_inverted_01",
+    "bbox": [
+      789,
+      1225,
+      881,
+      1326
+    ],
+    "method": "Apple Vision guided mask"
+  },
+  {
+    "id": 14,
+    "name": "bucket_orange_inverted_01",
+    "bbox": [
+      177,
+      1318,
+      268,
+      1415
+    ],
+    "method": "Apple Vision guided mask"
+  },
+  {
+    "id": 15,
+    "name": "lock_2",
+    "bbox": [
+      279,
+      1310,
+      367,
+      1415
+    ],
+    "method": "GrabCut"
+  },
+  {
+    "id": 16,
+    "name": "bucket_blue_inverted_02",
+    "bbox": [
+      380,
+      1318,
+      472,
+      1414
+    ],
+    "method": "Apple Vision guided mask"
+  },
+  {
+    "id": 17,
+    "name": "bucket_cream_inverted_03",
+    "bbox": [
+      482,
+      1318,
+      575,
+      1418
+    ],
+    "method": "Apple Vision guided mask"
+  },
+  {
+    "id": 18,
+    "name": "bucket_green_inverted_02",
+    "bbox": [
+      585,
+      1323,
+      677,
+      1413
+    ],
+    "method": "Apple Vision guided mask"
+  },
+  {
+    "id": 19,
+    "name": "bucket_orange_inverted_02",
+    "bbox": [
+      687,
+      1318,
+      779,
+      1418
+    ],
+    "method": "Apple Vision guided mask"
+  },
+  {
+    "id": 20,
+    "name": "gold_key_small",
+    "bbox": [
+      789,
+      1324,
+      880,
+      1400
+    ],
+    "method": "Apple Vision guided mask"
+  },
+  {
+    "id": 21,
+    "name": "bucket_cream_inverted_04",
+    "bbox": [
+      176,
+      1415,
+      268,
+      1508
+    ],
+    "method": "Apple Vision guided mask"
+  },
+  {
+    "id": 22,
+    "name": "gold_key_long",
+    "bbox": [
+      274,
+      1418,
+      784,
+      1515
+    ],
+    "method": "Apple Vision guided mask"
+  },
+  {
+    "id": 23,
+    "name": "lock_4_left",
+    "bbox": [
+      378,
+      1410,
+      474,
+      1518
+    ],
+    "method": "Apple Vision guided mask"
+  },
+  {
+    "id": 24,
+    "name": "lock_4_right",
+    "bbox": [
+      582,
+      1410,
+      679,
+      1518
+    ],
+    "method": "Apple Vision guided mask"
+  },
+  {
+    "id": 25,
+    "name": "bucket_green_partial",
+    "bbox": [
+      198,
+      1503,
+      253,
+      1526
+    ],
+    "method": "Apple Vision guided mask"
+  },
+  {
+    "id": 26,
+    "name": "lock_4_partial",
+    "bbox": [
+      275,
+      1502,
+      370,
+      1557
+    ],
+    "method": "Apple Vision guided mask"
+  },
+  {
+    "id": 27,
+    "name": "bucket_cream_partial",
+    "bbox": [
+      387,
+      1503,
+      465,
+      1550
+    ],
+    "method": "Apple Vision guided mask"
+  },
+  {
+    "id": 28,
+    "name": "bucket_blue_partial",
+    "bbox": [
+      492,
+      1502,
+      562,
+      1536
+    ],
+    "method": "Apple Vision guided mask"
+  },
+  {
+    "id": 29,
+    "name": "bucket_orange_partial",
+    "bbox": [
+      597,
+      1502,
+      659,
+      1525
+    ],
+    "method": "Apple Vision guided mask"
+  },
+  {
+    "id": 30,
+    "name": "advertising_character",
+    "bbox": [
+      0,
+      1508,
+      327,
+      1870
+    ],
+    "method": "Apple Vision guided mask"
+  },
+  {
+    "id": 31,
+    "name": "advertising_banner",
+    "bbox": [
+      310,
+      1506,
+      1052,
+      1870
+    ],
+    "method": "VLM boundary"
+  }
+]

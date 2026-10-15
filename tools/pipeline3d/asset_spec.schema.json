@@ -1,0 +1,612 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "godot-hybrid-casual/pipeline3d/asset_spec.schema.json",
+  "title": "Asset Spec v2 (машинно-читаемый слой поверх L0–L4 из ontology/pipeline3d.md)",
+  "type": "object",
+  "required": [
+    "spec_version",
+    "asset",
+    "refs",
+    "dimensions",
+    "units",
+    "properties",
+    "projections",
+    "budget"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "spec_version": {
+      "const": "2.0"
+    },
+    "dimensions": {
+      "type": "object",
+      "required": [
+        "H",
+        "R_top"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "H": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "высота, метры"
+        },
+        "R_top": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "радиус зева/верха, метры"
+        },
+        "H_over_D": {
+          "type": "number",
+          "description": "замер из рефа, для сверки"
+        }
+      }
+    },
+    "asset": {
+      "type": "object",
+      "required": [
+        "id",
+        "game",
+        "class",
+        "l0_function"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$"
+        },
+        "game": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "l0_function": {
+          "type": "string",
+          "minLength": 10,
+          "description": "L0: зачем объект существует в геймплее"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "path",
+          "pose"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "pose": {
+            "enum": [
+              "upright",
+              "flipped",
+              "other"
+            ]
+          },
+          "source_crop": {
+            "type": "string",
+            "description": "откуда кроп: игра/кадр/область"
+          }
+        }
+      }
+    },
+    "camera": {
+      "type": "object",
+      "required": [
+        "elevation",
+        "azimuth",
+        "dist"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "elevation": {
+          "type": "number",
+          "description": "градусы; для круглых частей = asin(minor/major) обода, не «на глаз»"
+        },
+        "azimuth": {
+          "type": "number",
+          "description": "от оси +X (конвенция clay_lib)"
+        },
+        "dist": {
+          "type": "number"
+        },
+        "z": {
+          "type": "number"
+        },
+        "lens": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "фокус, мм. Игра снимается почти ортографически: длинная линза (200-400 мм) на большой дистанции убирает перспективное расширение, которым реф не обладает"
+        },
+        "resolution": {
+          "type": "integer"
+        },
+        "calibration": {
+          "type": "string",
+          "description": "как измерена (узел N1)"
+        }
+      }
+    },
+    "units": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "role",
+          "requirement",
+          "build",
+          "provenance"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]+$"
+          },
+          "role": {
+            "type": "string",
+            "description": "L1: роль единицы (ёмкость/переноска/индикатор/основание...)"
+          },
+          "requirement": {
+            "type": "string",
+            "minLength": 5,
+            "description": "L1: требование функции"
+          },
+          "build": {
+            "oneOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "prim",
+                  "profile_knots",
+                  "wall",
+                  "segments",
+                  "bottom"
+                ],
+                "properties": {
+                  "prim": {
+                    "const": "lathe_shell"
+                  },
+                  "profile_knots": {
+                    "type": "array",
+                    "minItems": 3,
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      },
+                      "minItems": 2,
+                      "maxItems": 2
+                    },
+                    "description": "[t от 0(низ) до 1(верх), r в долях R_TOP] — внешний профиль; обязан быть монотонным по t"
+                  },
+                  "wall": {
+                    "type": "number",
+                    "exclusiveMinimum": 0,
+                    "maximum": 0.5
+                  },
+                  "segments": {
+                    "enum": [
+                      8,
+                      12,
+                      16,
+                      24,
+                      32,
+                      48,
+                      64
+                    ]
+                  },
+                  "bottom": {
+                    "enum": [
+                      "dome",
+                      "flat"
+                    ]
+                  },
+                  "open_top": {
+                    "type": "boolean"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "prim",
+                  "size",
+                  "scale"
+                ],
+                "properties": {
+                  "prim": {
+                    "const": "box"
+                  },
+                  "size": {
+                    "type": "number"
+                  },
+                  "scale": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    },
+                    "minItems": 3,
+                    "maxItems": 3
+                  },
+                  "offset": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    },
+                    "minItems": 3,
+                    "maxItems": 3
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "prim",
+                  "radius",
+                  "section",
+                  "sweep_deg"
+                ],
+                "properties": {
+                  "prim": {
+                    "const": "arc_bridge"
+                  },
+                  "radius": {
+                    "type": "number"
+                  },
+                  "section": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                  },
+                  "sweep_deg": {
+                    "type": "number",
+                    "maximum": 180
+                  },
+                  "anchors": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                  },
+                  "rule": {
+                    "const": "rings+bridge; полный тор, спрятанный в теле = баг (pipeline3d.md §5)"
+                  },
+                  "origin": {
+                    "type": "array",
+                    "items": { "type": "number" },
+                    "minItems": 3,
+                    "maxItems": 3,
+                    "description": "смещение дуги в метрах [x,y,z]; дуга строится в горизонтальной плоскости вокруг оси Z и центрируется по +X"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "prim",
+                  "path",
+                  "segments"
+                ],
+                "properties": {
+                  "prim": {
+                    "const": "lathe_path"
+                  },
+                  "path": {
+                    "type": "array",
+                    "minItems": 6,
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      },
+                      "minItems": 2,
+                      "maxItems": 2
+                    },
+                    "description": "[z_frac 0..1, r_frac 0..1.05] — произвольный путь вращения: дно-купол -> борт -> обод-закругление -> стенка -> полость -> купол-пол. НЕ обязан быть монотонным по z."
+                  },
+                  "segments": {
+                    "enum": [
+                      8,
+                      12,
+                      16,
+                      24,
+                      32,
+                      48,
+                      64
+                    ]
+                  },
+                  "origin": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    },
+                    "minItems": 3,
+                    "maxItems": 3,
+                    "description": "смещение меша в метрах [x,y,z] — оси-кнопки ручки"
+                  }
+                }
+              }
+            ]
+          },
+          "provenance": {
+            "type": "object",
+            "required": [
+              "visible_in_poses",
+              "ref"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "visible_in_poses": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string"
+                }
+              },
+              "ref": {
+                "type": "string"
+              },
+              "note": {
+                "type": "string"
+              }
+            },
+            "description": "Правило §8: не видно ни в одном рефе = часть вымышлена = запрещена"
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "properties": {
+      "type": "object",
+      "description": "L2: карта свойств, ключ = id единицы",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "hex"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "hex": {
+            "type": "string",
+            "pattern": "^#[0-9A-Fa-f]{6}$"
+          },
+          "gradient_stops": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "object",
+              "required": [
+                "pos",
+                "hex"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "pos": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "hex": {
+                  "type": "string",
+                  "pattern": "^#[0-9A-Fa-f]{6}$"
+                }
+              }
+            }
+          },
+          "gloss": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "behavior": {
+            "type": "string"
+          },
+          "albedo_gate_de": {
+            "type": "number",
+            "description": "замеренный ΔE(hex, реф) — палитровый гейт считается по albedo, не по рендеру (§7)"
+          },
+          "inner_hex": {
+            "type": "string",
+            "pattern": "^#[0-9A-Fa-f]{6}$"
+          },
+          "inner_gradient_stops": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "object",
+              "required": [
+                "pos",
+                "hex"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "pos": {
+                  "type": "number"
+                },
+                "hex": {
+                  "type": "string",
+                  "pattern": "^#[0-9A-Fa-f]{6}$"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "projections": {
+      "type": "object",
+      "required": [
+        "front",
+        "top",
+        "side"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "front": {
+          "$ref": "#/$defs/projection"
+        },
+        "top": {
+          "$ref": "#/$defs/projection"
+        },
+        "side": {
+          "$ref": "#/$defs/projection"
+        }
+      },
+      "description": "L3: каждая единица обязана присутствовать во всех трёх плоскостях; координаты в долях H/W"
+    },
+    "poses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "transform"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "transform": {
+            "enum": [
+              "identity",
+              "flip_180_x"
+            ]
+          },
+          "camera_elevation": {
+            "type": "number"
+          },
+          "camera_dist": {
+            "type": "number"
+          },
+          "sink": {
+            "type": "number"
+          },
+          "ref": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "Двойная поза обязательна для ref-lock (прямая + перевёрнутая), §3/§8"
+    },
+    "budget": {
+      "type": "object",
+      "required": [
+        "tris_max",
+        "one_mesh"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "tris_max": {
+          "type": "integer",
+          "minimum": 16
+        },
+        "one_mesh": {
+          "type": "boolean"
+        },
+        "texture": {
+          "enum": [
+            "vertex_gradient",
+            "atlas",
+            "none"
+          ]
+        }
+      }
+    },
+    "style_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "style_constants": {
+          "type": "string",
+          "default": "style_constants.json"
+        },
+        "target_style": {
+          "type": "string",
+          "default": "soft3d_v2"
+        },
+        "world_hex": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$",
+          "description": "фон сцены для рендера и для N-CMP: у игрового ассета фон = цвет игровой доски, иначе палитровый гейт непроходим (§7)"
+        },
+        "outline_hex": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$",
+          "description": "цвет toon-обводки; в игре — чистый чёрный"
+        },
+        "outline_px": {
+          "type": "number",
+          "minimum": 0,
+          "description": "толщина toon-обводки в пикселях рендера; в игре ~4-5% ширины объекта. 0 = обводки в этом состоянии нет (полное ведро)"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "projection": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "unit",
+          "x0",
+          "x1",
+          "y0",
+          "y1"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "unit": {
+            "type": "string"
+          },
+          "x0": {
+            "type": "number"
+          },
+          "x1": {
+            "type": "number"
+          },
+          "y0": {
+            "type": "number"
+          },
+          "y1": {
+            "type": "number"
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "_comment": "Конституция стиля проекта. Импортируется спекой, генератором и критиком: стиль by construction, а не post-hoc. Источники: research/analyses/style_metrics.md, ontology/pipeline3d.md §3/§5/§7, tools/clay_lib.py, tools/bucket_v23.py.",
+  "style_metrics_target": {
+    "ref_frame": "soft3d_v2",
+    "vector": { "saturation": 0.46, "contrast": 63.0, "air_pct": 6, "edge_pct": 9, "flat_pct": 83, "gloss_pct": 29 },
+    "tolerance_pct": 20,
+    "source": "research/analyses/style_metrics.md"
+  },
+  "ncmp_gates": {
+    "silhouette_iou_min": 0.85,
+    "zone_de_lab_max": 12,
+    "palette_top5_de_max": 10,
+    "bbox_dims_pct": 4,
+    "palette_mode": "albedo_only",
+    "palette_mode_reason": "рендерный свет ломает ΔE (116 на верном цвете); albedo детерминирован (pipeline3d.md §7)",
+    "dual_pose_required": true
+  },
+  "render_conventions": {
+    "world_rgb_0_255": [16, 16, 32],
+    "view_transform": "Standard",
+    "look": "None",
+    "mask_render": { "world_max": 0.3, "roughness_min": 0.25, "reason": "иначе купол выгорает и маска дырявая (§7)" },
+    "azimuth_from": "+X_axis",
+    "material_rgb_range": "0-1 (hex нормализовать, sRGB→linear по 2.2)"
+  },
+  "modeling_conventions": {
+    "arcs": "rings+bridge полудуга; полный тор, спрятанный в теле = баг",
+    "segments_allowed": [8, 12, 16, 24, 32, 48, 64],
+    "invented_parts": "запрещены: части нет ни в одном рефе — части нет в модели (§8)",
+    "duplicates": "final duplicates без shared mesh datablocks"
+  },
+  "palette": {
+    "clay_named": {
+      "BLUE_D": "#1C5299",
+      "YELLOW": "#FFD65A",
+      "PURPLE": "#9650DC",
+      "ORANGE": "#FF9128",
+      "source": "tools/clay_lib.py (RGB 0-1)"
+    },
+    "bucket_gradient": {
+      "stops": [
+        { "pos": 0.0, "hex": "#F05600" },
+        { "pos": 0.45, "hex": "#ED6800" },
+        { "pos": 0.85, "hex": "#FF9D00" },
+        { "pos": 1.0, "hex": "#FFA900" }
+      ],
+      "source": "tools/bucket_v23.py color ramp"
+    }
+  },
+  "game_palette_rule": {
+    "source": "research/analyses/car_sort_color_puzzle §8.1 / палитры top-игр в palettes.md",
+    "rule": "фон сцены холодный/десатурированный, игровой объект — единственный спектральный фокус; цвет объекта = UX, не украшение"
+  }
+}

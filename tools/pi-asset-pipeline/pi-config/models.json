@@ -1,0 +1,1 @@
+{"providers":{"cliproxy":{"baseUrl":"http://205.196.80.135:8317/v1","api":"openai-completions","apiKey":"CLIPROXY_API_KEY","models":[{"id":"gpt-6.1-sol","name":"GPT 6.1 Sol via CLIPROXY","input":["text","image"],"reasoning":true,"contextWindow":200000,"maxTokens":16000,"compat":{"supportsDeveloperRole":true}}]}}}

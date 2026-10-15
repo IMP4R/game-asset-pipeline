@@ -1,0 +1,25 @@
+{
+  "objects": [
+    {
+      "name": "open_bucket",
+      "score": 0.903262197971344,
+      "pixels": 8620
+    },
+    {
+      "name": "inverted_bucket",
+      "score": 0.7150507569313049,
+      "pixels": 7176
+    },
+    {
+      "name": "lock",
+      "score": 0.8888095617294312,
+      "pixels": 8913
+    },
+    {
+      "name": "long_key",
+      "score": 0.7212494015693665,
+      "pixels": 10595
+    }
+  ],
+  "peak_rss_bytes": 910065664
+}

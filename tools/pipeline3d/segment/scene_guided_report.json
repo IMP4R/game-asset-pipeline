@@ -1,0 +1,517 @@
+{
+  "source": "/Users/user0/godot-hybrid-casual/research/screens/sand_loop/play_shots/shot1.png",
+  "method": "human-model visual regions + Apple Vision instance masks",
+  "peak_combined_process_rss_bytes": 122667008,
+  "objects": [
+    {
+      "name": "settings",
+      "box": [
+        20,
+        12,
+        82,
+        84
+      ],
+      "id": 0,
+      "mask_path": "/Users/user0/godot-hybrid-casual/tools/pipeline3d/segment/scene_instances/00_settings_1.png",
+      "bbox": [
+        26,
+        15,
+        100,
+        91
+      ]
+    },
+    {
+      "name": "restart",
+      "box": [
+        108,
+        12,
+        84,
+        84
+      ],
+      "id": 1,
+      "mask_path": "/Users/user0/godot-hybrid-casual/tools/pipeline3d/segment/scene_instances/01_restart_1.png",
+      "bbox": [
+        111,
+        16,
+        186,
+        96
+      ]
+    },
+    {
+      "name": "lives",
+      "box": [
+        652,
+        10,
+        180,
+        85
+      ],
+      "id": 2,
+      "mask_path": "/Users/user0/godot-hybrid-casual/tools/pipeline3d/segment/scene_instances/02_lives_1.png",
+      "bbox": [
+        659,
+        16,
+        737,
+        85
+      ]
+    },
+    {
+      "name": "currency",
+      "box": [
+        850,
+        8,
+        192,
+        89
+      ],
+      "id": 3,
+      "mask_path": "/Users/user0/godot-hybrid-casual/tools/pipeline3d/segment/scene_instances/03_currency_1.png",
+      "bbox": [
+        855,
+        15,
+        932,
+        96
+      ]
+    },
+    {
+      "name": "conveyor",
+      "box": [
+        0,
+        790,
+        1052,
+        235
+      ],
+      "id": 5,
+      "mask_path": "/Users/user0/godot-hybrid-casual/tools/pipeline3d/segment/scene_instances/05_conveyor_1.png",
+      "bbox": [
+        0,
+        790,
+        1052,
+        1025
+      ]
+    },
+    {
+      "name": "capacity_panel",
+      "box": [
+        375,
+        967,
+        306,
+        151
+      ],
+      "id": 6,
+      "mask_path": "/Users/user0/godot-hybrid-casual/tools/pipeline3d/segment/scene_instances/06_capacity_panel_1.png",
+      "bbox": [
+        375,
+        970,
+        681,
+        1114
+      ]
+    },
+    {
+      "name": "bucket_cream_inverted_01",
+      "box": [
+        172,
+        1218,
+        100,
+        109
+      ],
+      "id": 7,
+      "mask_path": "/Users/user0/godot-hybrid-casual/tools/pipeline3d/segment/scene_instances/07_bucket_cream_inverted_01_1.png",
+      "bbox": [
+        175,
+        1224,
+        268,
+        1323
+      ]
+    },
+    {
+      "name": "bucket_orange_open_01",
+      "box": [
+        270,
+        1205,
+        109,
+        121
+      ],
+      "id": 8,
+      "mask_path": "/Users/user0/godot-hybrid-casual/tools/pipeline3d/segment/scene_instances/08_bucket_orange_open_01_1.png",
+      "bbox": [
+        272,
+        1210,
+        379,
+        1325
+      ]
+    },
+    {
+      "name": "bucket_cream_open_01",
+      "box": [
+        375,
+        1205,
+        106,
+        119
+      ],
+      "id": 9,
+      "mask_path": "/Users/user0/godot-hybrid-casual/tools/pipeline3d/segment/scene_instances/09_bucket_cream_open_01_1.png",
+      "bbox": [
+        375,
+        1210,
+        481,
+        1320
+      ]
+    },
+    {
+      "name": "bucket_orange_open_02",
+      "box": [
+        476,
+        1205,
+        107,
+        119
+      ],
+      "id": 10,
+      "mask_path": "/Users/user0/godot-hybrid-casual/tools/pipeline3d/segment/scene_instances/10_bucket_orange_open_02_1.png",
+      "bbox": [
+        476,
+        1210,
+        581,
+        1320
+      ]
+    },
+    {
+      "name": "bucket_blue_inverted_01",
+      "box": [
+        580,
+        1221,
+        98,
+        106
+      ],
+      "id": 11,
+      "mask_path": "/Users/user0/godot-hybrid-casual/tools/pipeline3d/segment/scene_instances/11_bucket_blue_inverted_01_1.png",
+      "bbox": [
+        584,
+        1225,
+        677,
+        1327
+      ]
+    },
+    {
+      "name": "bucket_cream_inverted_02",
+      "box": [
+        682,
+        1221,
+        101,
+        108
+      ],
+      "id": 12,
+      "mask_path": "/Users/user0/godot-hybrid-casual/tools/pipeline3d/segment/scene_instances/12_bucket_cream_inverted_02_1.png",
+      "bbox": [
+        686,
+        1224,
+        779,
+        1329
+      ]
+    },
+    {
+      "name": "bucket_green_inverted_01",
+      "box": [
+        786,
+        1221,
+        101,
+        108
+      ],
+      "id": 13,
+      "mask_path": "/Users/user0/godot-hybrid-casual/tools/pipeline3d/segment/scene_instances/13_bucket_green_inverted_01_1.png",
+      "bbox": [
+        788,
+        1225,
+        881,
+        1327
+      ]
+    },
+    {
+      "name": "bucket_orange_inverted_01",
+      "box": [
+        172,
+        1316,
+        100,
+        105
+      ],
+      "id": 14,
+      "mask_path": "/Users/user0/godot-hybrid-casual/tools/pipeline3d/segment/scene_instances/14_bucket_orange_inverted_01_1.png",
+      "bbox": [
+        176,
+        1318,
+        268,
+        1415
+      ]
+    },
+    {
+      "name": "bucket_blue_inverted_02",
+      "box": [
+        376,
+        1318,
+        102,
+        103
+      ],
+      "id": 16,
+      "mask_path": "/Users/user0/godot-hybrid-casual/tools/pipeline3d/segment/scene_instances/16_bucket_blue_inverted_02_1.png",
+      "bbox": [
+        380,
+        1318,
+        473,
+        1415
+      ]
+    },
+    {
+      "name": "bucket_cream_inverted_03",
+      "box": [
+        479,
+        1318,
+        100,
+        105
+      ],
+      "id": 17,
+      "mask_path": "/Users/user0/godot-hybrid-casual/tools/pipeline3d/segment/scene_instances/17_bucket_cream_inverted_03_1.png",
+      "bbox": [
+        482,
+        1318,
+        576,
+        1419
+      ]
+    },
+    {
+      "name": "bucket_green_inverted_02",
+      "box": [
+        581,
+        1318,
+        99,
+        105
+      ],
+      "id": 18,
+      "mask_path": "/Users/user0/godot-hybrid-casual/tools/pipeline3d/segment/scene_instances/18_bucket_green_inverted_02_1.png",
+      "bbox": [
+        584,
+        1318,
+        677,
+        1413
+      ]
+    },
+    {
+      "name": "bucket_orange_inverted_02",
+      "box": [
+        684,
+        1318,
+        99,
+        105
+      ],
+      "id": 19,
+      "mask_path": "/Users/user0/godot-hybrid-casual/tools/pipeline3d/segment/scene_instances/19_bucket_orange_inverted_02_1.png",
+      "bbox": [
+        686,
+        1318,
+        779,
+        1418
+      ]
+    },
+    {
+      "name": "gold_key_small",
+      "box": [
+        787,
+        1324,
+        95,
+        78
+      ],
+      "id": 20,
+      "mask_path": "/Users/user0/godot-hybrid-casual/tools/pipeline3d/segment/scene_instances/20_gold_key_small_1.png",
+      "bbox": [
+        789,
+        1324,
+        880,
+        1400
+      ]
+    },
+    {
+      "name": "bucket_cream_inverted_04",
+      "box": [
+        172,
+        1415,
+        99,
+        107
+      ],
+      "id": 21,
+      "mask_path": "/Users/user0/godot-hybrid-casual/tools/pipeline3d/segment/scene_instances/21_bucket_cream_inverted_04_1.png",
+      "bbox": [
+        175,
+        1415,
+        268,
+        1519
+      ]
+    },
+    {
+      "name": "gold_key_long",
+      "box": [
+        275,
+        1421,
+        513,
+        94
+      ],
+      "id": 22,
+      "mask_path": "/Users/user0/godot-hybrid-casual/tools/pipeline3d/segment/scene_instances/22_gold_key_long_1.png",
+      "bbox": [
+        378,
+        1421,
+        484,
+        1515
+      ]
+    },
+    {
+      "name": "gold_key_long",
+      "box": [
+        275,
+        1421,
+        513,
+        94
+      ],
+      "id": 22,
+      "mask_path": "/Users/user0/godot-hybrid-casual/tools/pipeline3d/segment/scene_instances/22_gold_key_long_2.png",
+      "bbox": [
+        575,
+        1421,
+        688,
+        1515
+      ]
+    },
+    {
+      "name": "lock_4_left",
+      "box": [
+        375,
+        1410,
+        104,
+        108
+      ],
+      "id": 23,
+      "mask_path": "/Users/user0/godot-hybrid-casual/tools/pipeline3d/segment/scene_instances/23_lock_4_left_1.png",
+      "bbox": [
+        378,
+        1410,
+        475,
+        1518
+      ]
+    },
+    {
+      "name": "lock_4_right",
+      "box": [
+        578,
+        1410,
+        104,
+        108
+      ],
+      "id": 24,
+      "mask_path": "/Users/user0/godot-hybrid-casual/tools/pipeline3d/segment/scene_instances/24_lock_4_right_1.png",
+      "bbox": [
+        582,
+        1410,
+        679,
+        1518
+      ]
+    },
+    {
+      "name": "bucket_green_partial",
+      "box": [
+        192,
+        1501,
+        61,
+        25
+      ],
+      "id": 25,
+      "mask_path": "/Users/user0/godot-hybrid-casual/tools/pipeline3d/segment/scene_instances/25_bucket_green_partial_1.png",
+      "bbox": [
+        197,
+        1503,
+        253,
+        1526
+      ]
+    },
+    {
+      "name": "lock_4_partial",
+      "box": [
+        275,
+        1502,
+        95,
+        55
+      ],
+      "id": 26,
+      "mask_path": "/Users/user0/godot-hybrid-casual/tools/pipeline3d/segment/scene_instances/26_lock_4_partial_1.png",
+      "bbox": [
+        275,
+        1502,
+        370,
+        1557
+      ]
+    },
+    {
+      "name": "bucket_cream_partial",
+      "box": [
+        387,
+        1502,
+        81,
+        48
+      ],
+      "id": 27,
+      "mask_path": "/Users/user0/godot-hybrid-casual/tools/pipeline3d/segment/scene_instances/27_bucket_cream_partial_1.png",
+      "bbox": [
+        387,
+        1503,
+        466,
+        1550
+      ]
+    },
+    {
+      "name": "bucket_blue_partial",
+      "box": [
+        490,
+        1502,
+        79,
+        39
+      ],
+      "id": 28,
+      "mask_path": "/Users/user0/godot-hybrid-casual/tools/pipeline3d/segment/scene_instances/28_bucket_blue_partial_1.png",
+      "bbox": [
+        492,
+        1502,
+        562,
+        1536
+      ]
+    },
+    {
+      "name": "bucket_orange_partial",
+      "box": [
+        594,
+        1502,
+        77,
+        23
+      ],
+      "id": 29,
+      "mask_path": "/Users/user0/godot-hybrid-casual/tools/pipeline3d/segment/scene_instances/29_bucket_orange_partial_1.png",
+      "bbox": [
+        597,
+        1502,
+        660,
+        1525
+      ]
+    },
+    {
+      "name": "advertising_character",
+      "box": [
+        0,
+        1506,
+        328,
+        364
+      ],
+      "id": 30,
+      "mask_path": "/Users/user0/godot-hybrid-casual/tools/pipeline3d/segment/scene_instances/30_advertising_character_1.png",
+      "bbox": [
+        0,
+        1507,
+        328,
+        1870
+      ]
+    }
+  ]
+}
